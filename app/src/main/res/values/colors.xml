@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="productTitleColor">#FF6F00</color>
+    <color name="priceColor">#388E3C</color>
+    <color name="cardBackground">#FFFFFF</color>
+
+    <color name="cardPressedColor">#EEEEEE</color>
+    <color name="cardNormalColor">#FFFFFF</color>
+
+    <color name="textColor">#000000</color>
+    <color name="hintColor">#888888</color>
+
+    <color name="primary">#3F51B5</color>
+    <color name="primaryDark">#303F9F</color>
+    <color name="accent">#FF4081</color>
+    <color name="background">#FAFAFA</color>
+    <color name="line">#DDDDDD</color>
+
+    <color name="greenPrimary">#4A7C59</color>
+    <color name="greenLight">#B4D8B4</color>
+    <color name="backgroundLight">#D4F0C4</color>
+
+</resources>

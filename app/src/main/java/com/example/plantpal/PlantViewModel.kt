@@ -28,7 +28,7 @@ class PlantViewModel @Inject constructor(
     private val _plants = MutableStateFlow<Resource<ApiPlantResponse>>(Resource.Loading())
     val plants: StateFlow<Resource<ApiPlantResponse>> = _plants
 
-    val activeReminders: LiveData<List<WorkInfo>> = wateringReminderScheduler.activeReminders
+    val activeReminders: LiveData<List<WorkInfo>> = wateringReminderScheduler.getWateringRemindersLiveData()
 
     init {
         fetchPlants()

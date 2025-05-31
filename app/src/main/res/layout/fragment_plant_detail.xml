@@ -127,5 +127,15 @@
             app:layout_constraintStart_toEndOf="@id/btnSetReminder"
             app:layout_constraintEnd_toEndOf="parent" />
 
+        <Button
+            android:id="@+id/btnViewReminders"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Reminders"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/btnCancelReminder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

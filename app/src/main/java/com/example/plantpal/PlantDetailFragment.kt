@@ -93,6 +93,7 @@ class PlantDetailFragment : Fragment() {
                         }
 
                         setupReminderButtons(plant.commonName ?: "Plant")
+                        Log.d("REMINDER_DEBUG", "setupReminderButtons called.")
                     }
                     is Resource.Error -> {
                         binding.progressBar.visibility = View.GONE
@@ -102,6 +103,8 @@ class PlantDetailFragment : Fragment() {
                         binding.tvWateringInfo.text = defaultCareInfo.watering
                         binding.tvSunlightInfo.text = defaultCareInfo.sunlight
                         Toast.makeText(requireContext(), "No care info from API, showing defaults.", Toast.LENGTH_SHORT).show()
+                        setupReminderButtons(plant.commonName ?: "Plant") // Also setup buttons on error
+                        Log.d("REMINDER_DEBUG", "setupReminderButtons called after API error.")
                     }
                 }
             }
@@ -110,15 +113,21 @@ class PlantDetailFragment : Fragment() {
         binding.btnBack.setOnClickListener {
             findNavController().navigateUp()
         }
+
+        binding.btnViewReminders.setOnClickListener {
+            findNavController().navigate(R.id.action_plantDetailFragment_to_remindersFragment)
+        }
     }
 
     private fun setupReminderButtons(plantName: String) {
         binding.btnSetReminder.setOnClickListener {
+            Log.d("REMINDER_DEBUG", "Set Reminder button clicked for $plantName.")
             viewModel.scheduleWateringReminder(plantName, "average")
             Toast.makeText(requireContext(), "Reminder set for $plantName", Toast.LENGTH_SHORT).show()
         }
 
         binding.btnCancelReminder.setOnClickListener {
+            Log.d("REMINDER_DEBUG", "Cancel Reminder button clicked for $plantName.")
             viewModel.cancelWateringReminder(plantName)
             Toast.makeText(requireContext(), "Reminder cancelled for $plantName", Toast.LENGTH_SHORT).show()
         }

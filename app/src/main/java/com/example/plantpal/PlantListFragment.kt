@@ -41,6 +41,10 @@ class PlantListFragment : Fragment() {
             findNavController().navigate(action)
         }
 
+        binding.btnViewReminders.setOnClickListener {
+            findNavController().navigate(R.id.action_plantListFragment_to_remindersFragment)
+        }
+
     }
 
     private fun setupRecyclerView() {

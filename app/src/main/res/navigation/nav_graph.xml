@@ -34,6 +34,9 @@
             app:popEnterAnim="@anim/from_right"
             app:popExitAnim="@anim/to_left"
             app:popUpTo="@id/plantListFragment" />
+        <action
+            android:id="@+id/action_plantDetailFragment_to_remindersFragment"
+            app:destination="@id/remindersFragment" />
     </fragment>
 
     <fragment
@@ -55,6 +58,9 @@
             app:popEnterAnim="@anim/from_left"
             app:popExitAnim="@anim/to_right"
             app:popUpTo="@id/plantListFragment" />
+        <action
+            android:id="@+id/action_plantListFragment_to_remindersFragment"
+            app:destination="@id/remindersFragment" />
     </fragment>
 
     <fragment
@@ -69,6 +75,11 @@
             android:id="@+id/action_apiPlantListFragment_to_plantListFragment"
             app:destination="@id/plantListFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/remindersFragment"
+        android:name="com.example.plantpal.RemindersFragment"
+        android:label="Reminders" />
 
     <activity
         android:id="@+id/mainActivity"

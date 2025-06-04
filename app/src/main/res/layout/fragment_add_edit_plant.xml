@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundLight"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="18dp"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/backToListButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/back"
+            android:backgroundTint="@color/greenLight"
+            android:textColor="@color/greenPrimary"
+            android:layout_gravity="start"/>
+
+        <TextView
+            android:id="@+id/title_add_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="add_edit_plant"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/greenPrimary"
+            android:layout_marginTop="24dp" />
+
+        <EditText
+            android:id="@+id/etPlantName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="plant name"
+            android:minHeight="48dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#3F51B5"/>
+
+        <EditText
+            android:id="@+id/etPlantDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="scientific name"
+            android:minHeight="48dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#3F51B5"/>
+
+        <EditText
+            android:id="@+id/etPlantWatering"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="watering"
+            android:minHeight="48dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#3F51B5"/>
+
+        <EditText
+            android:id="@+id/etPlantSunlight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="sunlight"
+            android:minHeight="48dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#3F51B5"/>
+
+        <Button
+            android:id="@+id/btnSelectImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="select_image"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/greenPrimary"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/ivPlantImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            android:background="#BDBDBD" />
+
+        <Button
+            android:id="@+id/btnSavePlant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="save plant"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/greenPrimary"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+</ScrollView>

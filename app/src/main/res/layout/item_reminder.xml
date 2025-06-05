@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="8dp"
-            android:text="Cancel Reminder"
+            android:text="@string/cancel_reminder"
             android:textColor="@color/white"
             android:backgroundTint="@color/greenPrimary"/>
 

@@ -8,29 +8,27 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.work.WorkInfo
-import com.example.plantpal.databinding.FragmentRemindersBinding
-import com.example.plantpal.util.Resource
+import com.example.plantpal.databinding.FragmentActiveRemindersBinding
 import com.example.plantpal.util.WateringReminderScheduler
 import com.example.plantpal.workers.WateringReminderWorker
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.concurrent.TimeUnit
 
 @AndroidEntryPoint
-class RemindersFragment : Fragment() {
+class ActiveRemindersFragment : Fragment() {
 
-    private var _binding: FragmentRemindersBinding? = null
+    private var _binding: FragmentActiveRemindersBinding? = null
     private val binding get() = _binding!!
     private val viewModel: PlantViewModel by viewModels()
     private lateinit var remindersAdapter: RemindersAdapter
-    private val TAG = "RemindersFragment"
+    private val TAG = "ActiveRemindersFragment"
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentRemindersBinding.inflate(inflater, container, false)
+        _binding = FragmentActiveRemindersBinding.inflate(inflater, container, false)
         return binding.root
     }
 

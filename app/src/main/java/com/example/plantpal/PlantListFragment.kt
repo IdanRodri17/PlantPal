@@ -41,6 +41,12 @@ class PlantListFragment : Fragment() {
             findNavController().navigate(action)
         }
 
+        binding.btnViewReminders.setOnClickListener {
+            val action = PlantListFragmentDirections
+                .actionPlantListFragmentToActiveRemindersFragment()
+            findNavController().navigate(action)
+        }
+
         binding.ivAppLogo.setOnClickListener{
             findNavController().navigateUp()
         }

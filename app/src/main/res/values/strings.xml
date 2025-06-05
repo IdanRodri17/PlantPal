@@ -22,6 +22,7 @@
     <string name="notification_channel_description">Notifications for plant watering reminders</string>
     <string name="notification_title">Time to Water Your Plant!</string>
     <string name="notification_text">Don\'t forget to water your %1$s</string>
+    <string name="notification_permission_denied">Notification permission denied</string>
     
     <!-- Reminder Frequency Strings -->
     <string name="frequency_frequent">Every 2 days</string>

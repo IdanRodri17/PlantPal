@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">PlantPal</string>
+    <string name="back">Back</string>
+    <string name="plant_image">Plant Image</string>
+    <string name="plant_name">Plant Name</string>
+    <string name="set_water_reminder">Set Watering Reminder</string>
+    <string name="select_image_source">select image source\n</string>
+    <string name="please_enter_plant_name">please enter plant name</string>
+    <string name="plant_saved_successfully">plant saved successfully</string>
+    <string name="choose_from_gallery">choose from gallery</string>
+    <string name="take_a_photo">take a photo</string>
+    <string name="are_you_sure_you_want_to_delete_this_plant">are you sure you want to delete this plant</string>
+    <string name="yes">yes\n</string>
+    <string name="no">no\n</string>
+    <string name="add_to_favorites">add to favorites</string>
+    <string name="watering_frequent">watering frequent</string>
+    <string name="my_list">My List</string>
+    <string name="watering">Watering: 💧</string>
+    <string name="sunlight">Sunlight: ☀️</string>
+    <!-- Notification Strings -->
+    <string name="notification_channel_name">Watering Reminders</string>
+    <string name="notification_channel_description">Notifications for plant watering reminders</string>
+    <string name="notification_title">Time to Water Your Plant!</string>
+    <string name="notification_text">Don\'t forget to water your %1$s</string>
+    <string name="notification_permission_denied">Notification permission denied</string>
+
+    <!-- Reminders -->
+    <string name="active_reminders_title">Active Watering Reminders</string>
+    <string name="view_active_reminders">View Reminders</string>
+    <string name="cancel_reminder">Cancel Reminder</string>
+    
+    <!-- Reminder Frequency Strings -->
+    <string name="frequency_frequent">Every 2 days</string>
+    <string name="frequency_average">Every 5 days</string>
+    <string name="frequency_minimum">Every 10 days</string>
+    <string name="frequency_unknown">Unknown frequency</string>
+
+    <!-- Colors -->
+    <string name="greenPrimary">#4CAF50</string>
+    <string name="greenLight">#A5D6A7</string>
+    <string name="backgroundLight">#F5F5F5</string>
+    <string name="black">#000000</string>
+    <string name="white">#FFFFFF</string>
+    <string name="internet_connection_error">Internet connection error: %1$s.</string>
+    <string name="no_active_reminders">No active reminders</string>
+    <string name="add_edit_plant">add | edit plant</string>
+    <string name="select_image">select image</string>
+</resources>

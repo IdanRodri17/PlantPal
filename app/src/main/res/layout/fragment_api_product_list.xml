@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/backgroundLight"
+    android:padding="16dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivAppLogo"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:contentDescription=""
+        android:scaleType="fitCenter"
+        android:src="@drawable/plantpal_icon_small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/RoundedCornersImage" />
+
+    <HorizontalScrollView
+        android:id="@+id/HorizontalScroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/ivAppLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/indoorChipGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:clipToPadding="false"
+        android:paddingHorizontal="6dp"
+        android:paddingVertical="6dp"
+        app:chipSpacingHorizontal="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivAppLogo"
+        app:selectionRequired="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_all"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="96dp"
+            android:layout_height="46dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="All"
+            android:textAlignment="center"
+            app:checkedIconVisible="false"
+            app:chipBackgroundColor="@color/chip_bg_selector"
+            app:chipStrokeWidth="2dp"
+            app:chipStrokeColor="@color/chip_stroke_selector"
+            app:rippleColor="@color/greenPrimary" />
+
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_indoor"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="96dp"
+            android:layout_height="46dp"
+            android:gravity="center"
+            android:text="Indoor"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            app:checkedIconVisible="false"
+            app:chipBackgroundColor="@color/chip_bg_selector"
+            app:chipStrokeColor="@color/chip_stroke_selector"
+            app:chipStrokeWidth="2dp"
+            app:rippleColor="@color/greenPrimary" />
+
+
+
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_outdoor"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="96dp"
+            android:layout_height="46dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="Outdoor"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:checkedIconVisible="false"
+            app:chipBackgroundColor="@color/chip_bg_selector"
+            app:chipStrokeColor="@color/chip_stroke_selector"
+            app:chipStrokeWidth="2dp"
+            app:rippleColor="@color/greenPrimary" />
+    </com.google.android.material.chip.ChipGroup>
+</HorizontalScrollView>
+
+    <Button
+        android:id="@+id/btnGoToFavorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="44dp"
+        android:backgroundTint="@color/greenPrimary"
+        android:text="@string/my_list"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/rvApiProducts"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:padding="8dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HorizontalScroll"
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/item_plant" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

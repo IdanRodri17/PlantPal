@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/apiPlantListFragment">
+
+    <fragment
+        android:id="@+id/addEditPlantFragment"
+        android:name="com.example.plantpal.ui.AddEditPlantFragment"
+        android:label="Add/Edit Plant">
+        <argument
+            android:name="plant"
+            app:argType="com.example.plantpal.Plant"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_addEditPlantFragment_to_plantListFragment"
+            app:destination="@id/plantListFragment"
+            app:popUpTo="@id/plantListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/plantDetailFragment"
+        android:name="com.example.plantpal.ui.PlantDetailFragment"
+        android:label="Plant Details">
+        <argument
+            android:name="plant"
+            app:argType="com.example.plantpal.ApiPlant" />
+        <action
+            android:id="@+id/action_plantDetailFragment_to_plantListFragment"
+            app:destination="@id/plantListFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left"
+            app:popUpTo="@id/plantListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/plantListFragment"
+        android:name="com.example.plantpal.ui.PlantListFragment"
+        android:label="Saved Plants">
+        <action
+            android:id="@+id/action_plantListFragment_to_addEditPlantFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:destination="@id/addEditPlantFragment" />
+        <action
+            android:id="@+id/action_plantListFragment_to_plantDetailFragment"
+            app:destination="@id/plantDetailFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpTo="@id/plantListFragment" />
+        <action
+            android:id="@+id/action_plantListFragment_to_favoritePlantDetailFragment"
+            app:destination="@id/favoritePlantDetailFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+
+        <action
+            android:id="@+id/action_plantListFragment_to_activeRemindersFragment"
+            app:destination="@id/activeRemindersFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/apiPlantListFragment"
+        android:name="com.example.plantpal.ApiPlantListFragment"
+        android:label="API Plants"
+        tools:layout="@layout/fragment_api_product_list">
+        <action
+            android:id="@+id/action_apiPlantListFragment_to_plantDetailFragment"
+            app:destination="@id/plantDetailFragment" />
+        <action
+            android:id="@+id/action_apiPlantListFragment_to_plantListFragment"
+            app:destination="@id/plantListFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_apiPlantListFragment_to_favoritePlantDetailFragment"
+            app:destination="@id/favoritePlantDetailFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favoritePlantDetailFragment"
+        android:name="com.example.plantpal.ui.FavoritePlantDetailFragment"
+        android:label="Favorite Plant Details"
+        tools:layout="@layout/fragment_favorite_plant_detail">
+        <argument
+            android:name="plant"
+            app:argType="com.example.plantpal.FavoritePlant" />
+        <action
+            android:id="@+id/action_favoritePlantDetailFragment_to_plantListFragment"
+            app:destination="@id/plantListFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left"
+            app:popUpTo="@id/plantListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/activeRemindersFragment"
+        android:name="com.example.plantpal.ActiveRemindersFragment"
+        android:label="Active Reminders"
+        tools:layout="@layout/fragment_active_reminders" />
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.plantpal.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+</navigation>

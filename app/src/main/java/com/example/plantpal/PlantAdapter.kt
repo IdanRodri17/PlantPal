@@ -1,11 +1,17 @@
 package com.example.plantpal
 
 import android.annotation.SuppressLint
+<<<<<<< HEAD
 import android.app.AlertDialog
 import android.content.res.Configuration
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
+=======
+import android.content.res.Configuration
+import android.view.LayoutInflater
+import android.view.MotionEvent
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.DiffUtil
@@ -86,15 +92,23 @@ class PlantAdapter(
 
         fun bind(plant: Plant) {
             binding.tvPlantName.text = plant.commonName ?: "Unknown Plant"
+<<<<<<< HEAD
             binding.tvWateringInfo.text = plant.watering ?: ""
             binding.tvSunlightInfo.text = plant.sunlight ?: ""
 
             Glide.with(binding.root.context)
                 .load(plant.imageUrl ?: R.drawable.plantpal_icon)
+=======
+            binding.tvWateringInfo.text = plant.scientificName ?: ""
+
+            Glide.with(binding.root.context)
+                .load(plant.imageUrl ?: R.drawable.ic_launcher_background)
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
                 .override(200, 200)
                 .centerCrop()
                 .into(binding.ivPlantImage)
 
+<<<<<<< HEAD
             binding.ivEditHint.visibility = View.VISIBLE
             binding.tvHintEdit.visibility = View.VISIBLE
 
@@ -125,6 +139,23 @@ class PlantAdapter(
             }
 
 
+=======
+            val isFavorite = isFavoriteCheck(plant.id)
+            binding.btnFavorite.setImageResource(
+                if (isFavorite) R.drawable.ic_launcher_background else R.drawable.ic_launcher_background
+            )
+            binding.btnFavorite.setColorFilter(
+                binding.root.context.getColor(
+                    if (isFavorite) R.color.greenPrimary else R.color.black
+                )
+            )
+
+            binding.btnFavorite.setOnClickListener {
+                onFavoriteClick(plant)
+                notifyItemChanged(bindingAdapterPosition)
+            }
+
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
             binding.root.setOnClickListener { onItemClick(plant) }
             binding.root.setOnLongClickListener {
                 onItemLongClick(plant)

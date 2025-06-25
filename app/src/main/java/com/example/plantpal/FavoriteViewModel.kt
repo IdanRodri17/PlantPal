@@ -1,5 +1,6 @@
 package com.example.plantpal
 
+<<<<<<< HEAD
 import android.app.Dialog
 import android.util.Log
 import android.widget.ImageView
@@ -8,6 +9,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bumptech.glide.Glide
 import com.example.plantpal.util.Resource
+=======
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -19,6 +25,7 @@ class FavoriteViewModel @Inject constructor(
 
     val favorites: LiveData<List<FavoritePlant>> = repository.getFavorites()
 
+<<<<<<< HEAD
 //    fun toggleFavorite(plant: Plant) {
 //        Log.d("FAV_DEBUG", "toggleFavorite called for id: ${plant.id}")
 //        viewModelScope.launch(Dispatchers.IO) {
@@ -44,6 +51,8 @@ class FavoriteViewModel @Inject constructor(
 //
 
 
+=======
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
     fun toggleFavorite(plant: Plant) {
         viewModelScope.launch(Dispatchers.IO) {
             val favorite = plant.toFavorite()
@@ -81,8 +90,13 @@ class FavoriteViewModel @Inject constructor(
         id = this.id,
         commonName = this.commonName,
         scientificName = this.scientificName,
+<<<<<<< HEAD
         watering = this.watering,
         sunlight = this.sunlight,
+=======
+        watering = null,
+        sunlight = null,
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
         imageUrl = this.imageUrl
     )
 
@@ -90,6 +104,7 @@ class FavoriteViewModel @Inject constructor(
         id = this.id,
         commonName = this.commonName,
         scientificName = this.scientificName,
+<<<<<<< HEAD
         imageUrl = this.imageUrl,
         watering = this.watering,
         sunlight = this.sunlight
@@ -113,4 +128,8 @@ class FavoriteViewModel @Inject constructor(
 //    }
 
 
+=======
+        imageUrl = this.imageUrl
+    )
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
 }

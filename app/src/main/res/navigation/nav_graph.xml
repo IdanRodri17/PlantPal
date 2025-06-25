@@ -7,7 +7,11 @@
 
     <fragment
         android:id="@+id/addEditPlantFragment"
+<<<<<<< HEAD
         android:name="com.example.plantpal.ui.AddEditPlantFragment"
+=======
+        android:name="com.example.plantpal.AddEditPlantFragment"
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
         android:label="Add/Edit Plant">
         <argument
             android:name="plant"
@@ -21,11 +25,19 @@
 
     <fragment
         android:id="@+id/plantDetailFragment"
+<<<<<<< HEAD
         android:name="com.example.plantpal.ui.PlantDetailFragment"
         android:label="Plant Details">
         <argument
             android:name="plant"
             app:argType="com.example.plantpal.ApiPlant" />
+=======
+        android:name="com.example.plantpal.PlantDetailFragment"
+        android:label="Plant Details">
+        <argument
+            android:name="plant"
+            app:argType="com.example.plantpal.Plant" />
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
         <action
             android:id="@+id/action_plantDetailFragment_to_plantListFragment"
             app:destination="@id/plantListFragment"
@@ -34,11 +46,21 @@
             app:popEnterAnim="@anim/from_right"
             app:popExitAnim="@anim/to_left"
             app:popUpTo="@id/plantListFragment" />
+<<<<<<< HEAD
+=======
+        <action
+            android:id="@+id/action_plantDetailFragment_to_remindersFragment"
+            app:destination="@id/remindersFragment" />
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
     </fragment>
 
     <fragment
         android:id="@+id/plantListFragment"
+<<<<<<< HEAD
         android:name="com.example.plantpal.ui.PlantListFragment"
+=======
+        android:name="com.example.plantpal.PlantListFragment"
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
         android:label="Saved Plants">
         <action
             android:id="@+id/action_plantListFragment_to_addEditPlantFragment"
@@ -56,6 +78,7 @@
             app:popExitAnim="@anim/to_right"
             app:popUpTo="@id/plantListFragment" />
         <action
+<<<<<<< HEAD
             android:id="@+id/action_plantListFragment_to_favoritePlantDetailFragment"
             app:destination="@id/favoritePlantDetailFragment"
             app:enterAnim="@anim/from_right"
@@ -66,6 +89,10 @@
         <action
             android:id="@+id/action_plantListFragment_to_activeRemindersFragment"
             app:destination="@id/activeRemindersFragment" />
+=======
+            android:id="@+id/action_plantListFragment_to_remindersFragment"
+            app:destination="@id/remindersFragment" />
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
     </fragment>
 
     <fragment
@@ -78,6 +105,7 @@
             app:destination="@id/plantDetailFragment" />
         <action
             android:id="@+id/action_apiPlantListFragment_to_plantListFragment"
+<<<<<<< HEAD
             app:destination="@id/plantListFragment"
             app:enterAnim="@anim/from_right"
             app:exitAnim="@anim/to_left"
@@ -116,6 +144,15 @@
         android:name="com.example.plantpal.ActiveRemindersFragment"
         android:label="Active Reminders"
         tools:layout="@layout/fragment_active_reminders" />
+=======
+            app:destination="@id/plantListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/remindersFragment"
+        android:name="com.example.plantpal.RemindersFragment"
+        android:label="Reminders" />
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
 
     <activity
         android:id="@+id/mainActivity"

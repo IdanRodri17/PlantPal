@@ -10,11 +10,14 @@
     <color name="cardPressedColor">#EEEEEE</color>
     <color name="cardNormalColor">#FFFFFF</color>
 
+<<<<<<< HEAD
 
     <color name="Plant_base_color">#C0724B</color>
     <color name="Plant_top_color">#2FA3FA</color>
 
 
+=======
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
     <color name="textColor">#000000</color>
     <color name="hintColor">#888888</color>
 

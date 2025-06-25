@@ -4,16 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundLight"
+<<<<<<< HEAD
     android:fitsSystemWindows="true">
+=======
+    android:padding="16dp">
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+<<<<<<< HEAD
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:paddingTop="18dp"
         android:paddingBottom="14dp"
+=======
+        android:layout_marginTop="18dp"
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
         android:gravity="center_horizontal">
 
         <Button
@@ -29,7 +37,11 @@
             android:id="@+id/title_add_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:text="@string/add_edit_plant"
+=======
+            android:text="add_edit_plant"
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@color/greenPrimary"
@@ -75,7 +87,11 @@
             android:id="@+id/btnSelectImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:text="@string/select_image"
+=======
+            android:text="select_image"
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
             android:layout_marginTop="24dp"
             android:backgroundTint="@color/greenPrimary"
             android:textColor="@color/white" />
@@ -95,7 +111,10 @@
             android:layout_height="wrap_content"
             android:text="save plant"
             android:layout_marginTop="24dp"
+<<<<<<< HEAD
             android:layout_marginBottom="24dp"
+=======
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
             android:backgroundTint="@color/greenPrimary"
             android:textColor="@color/white" />
 

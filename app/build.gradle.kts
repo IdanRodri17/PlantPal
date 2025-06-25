@@ -47,6 +47,7 @@ android {
 }
 
 dependencies {
+<<<<<<< HEAD
     //implementation(libs.hilt.android.v2562)
 /*
     implementation 'com.github.bumptech.glide:glide:4.16.0';
@@ -64,6 +65,17 @@ dependencies {
 
     //FireBase
 
+=======
+    // Hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
+
+    // Lifecycle
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
 
     // Retrofit
     implementation(libs.retrofit)
@@ -71,6 +83,7 @@ dependencies {
     implementation(libs.coroutines.core)
     implementation(libs.coroutines.android)
 
+<<<<<<< HEAD
     implementation(libs.room.runtime)
     kapt(libs.room.compiler)
     implementation(libs.glide)
@@ -78,6 +91,16 @@ dependencies {
     implementation(libs.androidx.room.runtime.android)
     implementation(libs.androidx.annotation)
     implementation(libs.androidx.databinding.runtime)
+=======
+    // Room
+    implementation(libs.room.runtime)
+    kapt(libs.room.compiler)
+    implementation(libs.androidx.room.common.jvm)
+    implementation(libs.androidx.room.runtime.android)
+
+    // Other dependencies
+    implementation(libs.glide)
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
     kapt(libs.glide.compiler)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -87,6 +110,7 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.recyclerview)
+<<<<<<< HEAD
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -95,4 +119,14 @@ dependencies {
     // WorkManager
     implementation("androidx.work:work-runtime-ktx:2.9.0")
 
+=======
+    implementation("androidx.work:work-runtime-ktx:2.9.0")
+    implementation("androidx.work:work-runtime:2.9.0")
+    implementation(kotlin("reflect"))
+
+    // Testing
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
 }

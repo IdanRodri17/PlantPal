@@ -6,9 +6,13 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.plantpal.databinding.ItemReminderBinding
+<<<<<<< HEAD
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+=======
+import com.example.plantpal.model.WateringReminder
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
 
 class RemindersAdapter(
     private val onCancelReminder: (String) -> Unit
@@ -31,6 +35,7 @@ class RemindersAdapter(
         private val binding: ItemReminderBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
+<<<<<<< HEAD
         private val dateFormat = SimpleDateFormat("MMM dd, yyyy", Locale.getDefault())
 
         fun bind(reminder: WateringReminder) {
@@ -56,6 +61,19 @@ class RemindersAdapter(
                             onCancelReminder(reminder.plantName)
                         }
                         .start()
+=======
+        fun bind(reminder: WateringReminder) {
+            binding.apply {
+                tvPlantName.text = reminder.plantName
+                tvWateringFrequency.text = when (reminder.wateringFrequency) {
+                    "frequent" -> "Every 2-3 days"
+                    "average" -> "Every 4-7 days"
+                    "minimum" -> "Every 7-14 days"
+                    else -> "Every week"
+                }
+                btnCancelReminder.setOnClickListener {
+                    onCancelReminder(reminder.plantName)
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
                 }
             }
         }

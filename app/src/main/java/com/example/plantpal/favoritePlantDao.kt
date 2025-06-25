@@ -6,7 +6,10 @@ import androidx.room.*
 @Dao
 interface FavoritePlantDao {
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
     @Query("SELECT * FROM FavoritePlantsTable")
     fun getAllFavorites(): LiveData<List<FavoritePlant>>
 

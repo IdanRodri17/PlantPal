@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -19,19 +20,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
+=======
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvReminders"
         android:layout_width="match_parent"
+<<<<<<< HEAD
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@id/tvRemindersTitle"
         app:layout_constraintBottom_toBottomOf="parent"/>
+=======
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:padding="16dp" />
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
 
     <TextView
         android:id="@+id/tvNoReminders"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:text="No active reminders"
         android:textSize="18sp"
         android:textColor="@color/greenPrimary"
@@ -40,5 +54,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+=======
+        android:text="No active watering reminders"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
 
 </androidx.constraintlayout.widget.ConstraintLayout> 

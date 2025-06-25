@@ -21,6 +21,7 @@
             android:id="@+id/ivPlantImage"
             android:layout_width="match_parent"
             android:layout_height="180dp"
+<<<<<<< HEAD
             android:adjustViewBounds="true"
             android:background="#BDBDBD"
             android:contentDescription="@string/plant_image"
@@ -58,26 +59,51 @@
             android:id="@+id/btnFavorite"
             android:layout_width="55dp"
             android:layout_height="55dp"
+=======
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:background="#BDBDBD"
+            android:contentDescription="@string/plant_image" />
+
+        <ImageButton
+            android:id="@+id/btnFavorite"
+            android:layout_width="72dp"
+            android:layout_height="58dp"
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
             android:layout_gravity="end"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:contentDescription="@string/add_to_favorites"
+<<<<<<< HEAD
             android:src="@drawable/add_plus" />
+=======
+            android:src="@drawable/ic_launcher_foreground"
+            app:tint="@color/black" />
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
 
         <TextView
             android:id="@+id/tvPlantName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:layout_marginTop="8dp"
             android:text="@string/plant_name"
             android:textColor="@color/greenPrimary"
             android:textSize="20sp"
             android:textStyle="bold" />
+=======
+            android:text="@string/plant_name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/greenPrimary"
+            android:layout_marginTop="8dp"/>
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
 
         <TextView
             android:id="@+id/tvWateringInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:layout_marginTop="4dp"
             android:text="@string/watering"
             android:textColor="@color/black"
@@ -91,6 +117,12 @@
             android:text="@string/sunlight"
             android:textColor="@color/black"
             android:textSize="14sp" />
+=======
+            android:text="@string/watering_frequent"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginTop="4dp"/>
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
 
 
     </LinearLayout>

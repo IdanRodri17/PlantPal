@@ -12,6 +12,7 @@
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/ivAppLogo"
             android:layout_width="120dp"
+<<<<<<< HEAD
             android:layout_height="120dp"
             android:layout_marginStart="25dp"
             android:layout_marginTop="25dp"
@@ -32,11 +33,32 @@
             android:layout_marginEnd="24dp"
             android:backgroundTint="@color/greenPrimary"
             android:elevation="2dp"
+=======
+            android:layout_height="74dp"
+            android:src="@drawable/ic_launcher_foreground"
+            android:scaleType="centerCrop"
+            android:contentDescription=""
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.PlantPal.Rounded."
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="16dp" />
+
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:elevation="2dp"
+            android:layout_marginEnd="24dp"
+            android:backgroundTint="@color/greenPrimary"
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
             android:text="go to add"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/ivAppLogo" />
 
+<<<<<<< HEAD
         <Button
             android:id="@+id/btnViewReminders"
             android:layout_width="150dp"
@@ -49,11 +71,23 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/addButton" />
 
+=======
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="18dp"
+            android:background="#CCCCCC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addButton" />
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvFavorites"
             android:layout_width="0dp"
             android:layout_height="0dp"
+<<<<<<< HEAD
             android:layout_marginTop="13dp"
             android:clipToPadding="false"
             android:padding="8dp"
@@ -64,4 +98,24 @@
             app:layout_constraintTop_toBottomOf="@id/btnViewReminders"
             app:layout_constraintVertical_bias="0.0"
             tools:listitem="@layout/item_plant" />
+=======
+            android:clipToPadding="false"
+            android:layout_marginTop="14dp"
+            android:padding="8dp"
+            app:layout_constraintTop_toBottomOf="@id/ivAppLogo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:listitem="@layout/item_plant" />
+
+        <Button
+            android:id="@+id/btnViewReminders"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Reminders"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
 </androidx.constraintlayout.widget.ConstraintLayout>

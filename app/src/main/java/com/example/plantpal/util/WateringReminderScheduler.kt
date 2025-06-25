@@ -1,11 +1,18 @@
 package com.example.plantpal.util
 
 import android.content.Context
+<<<<<<< HEAD
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.work.Data
 import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.OneTimeWorkRequestBuilder
+=======
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.work.Data
+import androidx.work.ExistingPeriodicWorkPolicy
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
 import androidx.work.PeriodicWorkRequest
 import androidx.work.WorkInfo
 import androidx.work.WorkManager
@@ -14,6 +21,7 @@ import java.util.concurrent.TimeUnit
 
 class WateringReminderScheduler(private val context: Context) {
     private val workManager = WorkManager.getInstance(context)
+<<<<<<< HEAD
     private val TAG = "WateringReminderScheduler"
 
     companion object {
@@ -47,14 +55,37 @@ class WateringReminderScheduler(private val context: Context) {
         } catch (e: Exception) {
             Log.e(TAG, "Error cancelling reminder for $plantName", e)
         }
+=======
+
+    fun scheduleWateringReminder(plantName: String, wateringFrequency: String) {
+        android.util.Log.d("REMINDER_DEBUG", "Scheduling reminder for $plantName with frequency $wateringFrequency.")
+        val workRequest = createWorkRequest(plantName, wateringFrequency)
+        workManager.enqueueUniquePeriodicWork(
+            "watering_reminder_$plantName",
+            ExistingPeriodicWorkPolicy.UPDATE,
+            workRequest
+        )
+    }
+
+    fun cancelWateringReminder(plantName: String) {
+        android.util.Log.d("REMINDER_DEBUG", "Cancelling reminder for $plantName.")
+        workManager.cancelUniqueWork("watering_reminder_$plantName")
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
     }
 
     private fun createWorkRequest(plantName: String, wateringFrequency: String): PeriodicWorkRequest {
         val intervalDays = when (wateringFrequency.lowercase()) {
+<<<<<<< HEAD
             "frequent" -> FREQUENT_DAYS
             "average" -> AVERAGE_DAYS
             "minimum" -> MINIMUM_DAYS
             else -> DEFAULT_DAYS
+=======
+            "frequent" -> 2L
+            "average" -> 5L
+            "minimum" -> 10L
+            else -> 7L
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
         }
 
         val inputData = Data.Builder()
@@ -69,6 +100,7 @@ class WateringReminderScheduler(private val context: Context) {
             .build()
     }
 
+<<<<<<< HEAD
     fun scheduleTestReminder(plantName: String) {
         Log.d(TAG, "Scheduling test reminder for $plantName")
         try {
@@ -99,4 +131,9 @@ class WateringReminderScheduler(private val context: Context) {
     }
 
 
+=======
+    fun getWateringRemindersLiveData(): LiveData<List<WorkInfo>> {
+        return workManager.getWorkInfosByTagLiveData("watering_reminder")
+    }
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
 } 

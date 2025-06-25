@@ -1,5 +1,6 @@
 package com.example.plantpal
 
+<<<<<<< HEAD
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
@@ -24,3 +25,20 @@ data class WateringBenchmark(
 data class DefaultImage(
     @SerializedName("original_url") val original_url: String?
 ) : Parcelable
+=======
+import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.Serializer
+
+data class ApiPlantDetails(
+    val id: Int,
+    val common_name: String?,
+    val scientific_name: List<String>?,
+    val watering: String?,
+    val sunlight: List<String>?,
+    val default_image: DefaultImage?
+)
+
+data class DefaultImage(
+    val original_url: String?
+)
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8

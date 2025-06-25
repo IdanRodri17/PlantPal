@@ -8,9 +8,12 @@ import androidx.core.app.NotificationCompat
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import com.example.plantpal.R
+<<<<<<< HEAD
 import android.util.Log
 import androidx.work.Data
 
+=======
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
 
 class WateringReminderWorker(
     private val context: Context,
@@ -21,6 +24,7 @@ class WateringReminderWorker(
         const val PLANT_NAME_KEY = "plant_name"
         const val CHANNEL_ID = "watering_reminder_channel"
         const val NOTIFICATION_ID = 1
+<<<<<<< HEAD
         private const val TAG = "WateringReminderWorker"
     }
 
@@ -58,6 +62,26 @@ class WateringReminderWorker(
             val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
                 description = descriptionText
                 enableVibration(true)
+=======
+    }
+
+    override suspend fun doWork(): Result {
+        val plantName = params.inputData.getString(PLANT_NAME_KEY) ?: return Result.failure()
+        
+        createNotificationChannel()
+        showNotification(plantName)
+        
+        return Result.success()
+    }
+
+    private fun createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val name = "Watering Reminders"
+            val descriptionText = "Notifications for plant watering reminders"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
+                description = descriptionText
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
             }
             
             val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -67,14 +91,24 @@ class WateringReminderWorker(
 
     private fun showNotification(plantName: String) {
         val notification = NotificationCompat.Builder(context, CHANNEL_ID)
+<<<<<<< HEAD
             .setSmallIcon(R.drawable.plantpal_icon_small)
             .setContentTitle(context.getString(R.string.notification_title))
             .setContentText(context.getString(R.string.notification_text, plantName))
+=======
+            .setSmallIcon(R.drawable.ic_launcher_foreground)
+            .setContentTitle("Time to Water Your Plant!")
+            .setContentText("Don't forget to water your $plantName")
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .setAutoCancel(true)
             .build()
 
         val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+<<<<<<< HEAD
         notificationManager.notify(System.currentTimeMillis().toInt(), notification)
+=======
+        notificationManager.notify(NOTIFICATION_ID, notification)
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
     }
 } 

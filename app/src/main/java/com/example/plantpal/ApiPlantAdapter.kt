@@ -5,6 +5,7 @@ import android.content.res.Configuration
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.MotionEvent
+<<<<<<< HEAD
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
@@ -12,10 +13,19 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.signature.ObjectKey
+=======
+import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
 import com.example.plantpal.databinding.ItemPlantBinding
 import com.google.android.material.card.MaterialCardView
 
 class ApiPlantAdapter(
+<<<<<<< HEAD
     private val onItemClick: (ApiPlant) -> Unit,
     private val onItemLongClick: (ApiPlant) -> Unit,
     private val onFavoriteClick: (ApiPlant) -> Unit,
@@ -29,6 +39,21 @@ class ApiPlantAdapter(
             }
 
             override fun areContentsTheSame(oldItem: ApiPlant, newItem: ApiPlant): Boolean {
+=======
+    private val onItemClick: (Plant) -> Unit,
+    private val onItemLongClick: (Plant) -> Unit,
+    private val onFavoriteClick: (Plant) -> Unit,
+    private val isFavoriteCheck: (Int) -> Boolean
+) : ListAdapter<Plant, ApiPlantAdapter.PlantViewHolder>(DIFF_CALLBACK) {
+
+    companion object {
+        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Plant>() {
+            override fun areItemsTheSame(oldItem: Plant, newItem: Plant): Boolean {
+                return oldItem.id == newItem.id
+            }
+
+            override fun areContentsTheSame(oldItem: Plant, newItem: Plant): Boolean {
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
                 return oldItem == newItem
             }
         }
@@ -57,7 +82,10 @@ class ApiPlantAdapter(
             false
         }
 
+<<<<<<< HEAD
         // התאמות רוחב ומרווחים
+=======
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
         val context = holder.itemView.context
         val layoutParams = holder.itemView.layoutParams
         val orientation = context.resources.configuration.orientation
@@ -82,6 +110,7 @@ class ApiPlantAdapter(
     inner class PlantViewHolder(private val binding: ItemPlantBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
+<<<<<<< HEAD
         fun bind(plant: ApiPlant) {
             Log.d("PLANT_DEBUG", "Binding plant: ${plant.commonName}")
 
@@ -124,10 +153,23 @@ class ApiPlantAdapter(
                     .diskCacheStrategy(com.bumptech.glide.load.engine.DiskCacheStrategy.ALL)
                     .signature(ObjectKey(imageUrl)) // חתימה זהה לזו שב־preload
                     .placeholder(R.drawable.plantpal_icon_small)
+=======
+        fun bind(plant: Plant) {
+            Log.d("PLANT_DEBUG", "Binding: ${plant.commonName}")
+
+            binding.tvPlantName.text = plant.commonName ?: "Unknown Plant"
+            binding.tvWateringInfo.text = plant.scientificName ?: ""
+            
+            if (!plant.imageUrl.isNullOrEmpty()) {
+                Glide.with(binding.root.context)
+                    .load(plant.imageUrl)
+                    .placeholder(R.drawable.ic_launcher_background)
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
                     .override(200, 200)
                     .centerCrop()
                     .into(binding.ivPlantImage)
             } else {
+<<<<<<< HEAD
                 binding.ivPlantImage.setImageResource(R.drawable.plantpal_icon_small)
             }
             Log.d("IMAGE_URL_DEBUG", "Plant: ${plant.commonName}, URL: ${plant.defaultImage?.mediumUrl}")
@@ -145,6 +187,24 @@ class ApiPlantAdapter(
                 Log.d("FAV_DEBUG", "Favorite button clicked for plant id: ${plant.id}")
                 onFavoriteClick(plant)
                 notifyItemChanged(adapterPosition)
+=======
+                binding.ivPlantImage.setImageResource(R.drawable.ic_launcher_background)
+            }
+
+            val isFavorite = isFavoriteCheck(plant.id)
+            binding.btnFavorite.setImageResource(
+                if (isFavorite) R.drawable.ic_launcher_background else R.drawable.ic_launcher_background
+            )
+            binding.btnFavorite.setColorFilter(
+                binding.root.context.getColor(
+                    if (isFavorite) R.color.greenPrimary else R.color.black
+                )
+            )
+
+            binding.btnFavorite.setOnClickListener {
+                onFavoriteClick(plant)
+                notifyItemChanged(bindingAdapterPosition)
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
             }
 
             binding.root.setOnClickListener { onItemClick(plant) }

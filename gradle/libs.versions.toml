@@ -27,6 +27,10 @@ retrofit = "2.9.0"
 gson = "2.9.0"
 coroutines = "1.7.3"
 hilt = "2.56.2"
+<<<<<<< HEAD
+=======
+workRuntimeKtx = "2.10.1"
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
 
 
 [libraries]
@@ -70,6 +74,10 @@ androidx-annotation = { group = "androidx.annotation", name = "annotation", vers
 support-v4 = { group = "com.android.support", name = "support-v4", version.ref = "supportV4" }
 androidx-databinding-runtime = { group = "androidx.databinding", name = "databinding-runtime", version.ref = "databindingRuntime" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "roomRuntime" }
+<<<<<<< HEAD
+=======
+androidx-work-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "workRuntimeKtx" }
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
 
 [plugins]
 

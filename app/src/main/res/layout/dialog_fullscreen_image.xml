@@ -2,12 +2,21 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     android:background="#000000">
+=======
+    android:background="@android:color/black">
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
 
     <ImageView
         android:id="@+id/fullscreenImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitCenter"
+<<<<<<< HEAD
+=======
+        android:clickable="true"
+        android:focusable="true"
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
         android:contentDescription="Full screen image"/>
 </FrameLayout>

@@ -1,5 +1,6 @@
 package com.example.plantpal
 
+<<<<<<< HEAD
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Build
@@ -10,11 +11,17 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+=======
+import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
 import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+<<<<<<< HEAD
     private lateinit var requestPermissionLauncher: ActivityResultLauncher<String>
 
     private fun registerPermissionLauncher() {
@@ -38,13 +45,18 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+=======
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
+<<<<<<< HEAD
         registerPermissionLauncher()
         requestNotificationPermission()
 
+=======
+>>>>>>> 70b5208f6b4e5f358a23068484823b97a630b2a8
     }
 }

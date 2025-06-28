@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="logo_size_large">120dp</dimen>
+    <dimen name="logo_size_small">70dp</dimen>
+</resources>

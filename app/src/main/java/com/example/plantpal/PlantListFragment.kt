@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
+import android.content.res.Configuration
 import com.example.plantpal.databinding.FragmentPlantListBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -65,7 +67,12 @@ class PlantListFragment : Fragment() {
                 viewModel.isFavorite(id)
             }
         )
-        binding.rvFavorites.layoutManager = LinearLayoutManager(requireContext())
+        val orientation = resources.configuration.orientation
+        binding.rvFavorites.layoutManager = if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            GridLayoutManager(requireContext(), 2)
+        } else {
+            LinearLayoutManager(requireContext())
+        }
         binding.rvFavorites.adapter = adapter
 
 

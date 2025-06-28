@@ -11,6 +11,8 @@ import androidx.fragment.app.viewModels
 <<<<<<< HEAD
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
+import android.content.res.Configuration
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.signature.ObjectKey
@@ -127,7 +129,12 @@ class ApiPlantListFragment : Fragment() {
             }
         )
 
-        binding.rvApiProducts.layoutManager = LinearLayoutManager(requireContext())
+        val orientation = resources.configuration.orientation
+        binding.rvApiProducts.layoutManager = if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            GridLayoutManager(requireContext(), 2)
+        } else {
+            LinearLayoutManager(requireContext())
+        }
         binding.rvApiProducts.adapter = adapter
     }
 
